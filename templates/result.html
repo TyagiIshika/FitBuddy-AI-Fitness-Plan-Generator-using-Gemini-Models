@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Your Workout Plan</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#111;
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+margin:0;
+}
+
+.container{
+background:#222;
+padding:30px;
+border-radius:10px;
+width:500px;
+}
+
+h2{
+text-align:center;
+}
+
+.plan{
+background:#333;
+padding:15px;
+border-radius:6px;
+margin-top:10px;
+}
+
+textarea{
+width:100%;
+padding:10px;
+margin-top:10px;
+border-radius:6px;
+}
+
+button{
+margin-top:10px;
+padding:10px;
+background:#28a745;
+border:none;
+color:white;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:#218838;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Hello {{ username }}</h2>
+
+<p><b>Goal:</b> {{ goal }}</p>
+<p><b>Intensity:</b> {{ intensity }}</p>
+
+<h3>7 Day Workout Plan</h3>
+
+<div class="plan">
+
+{{ workout_plan }}
+
+</div>
+
+<h3>Nutrition Tip</h3>
+
+<p>{{ nutrition_tip }}</p>
+
+<h3>Give Feedback</h3>
+
+<form action="/submit-feedback" method="post">
+
+<textarea name="feedback" placeholder="Example: add more cardio"></textarea>
+
+<button type="submit">Update Plan</button>
+
+</form>
+
+</div>
+
+</body>
+</html>
